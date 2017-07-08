@@ -2,6 +2,7 @@
 
      <h4>{{ object.title }}</h4>
     <p>{{ object.content }}</p>
+    <a href="{% url 'blogs:update' object.pk %}">Update</a>
     <hr>
 
 
