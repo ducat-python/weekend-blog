@@ -4,17 +4,21 @@
 {% block content %}
 
 
+    <div class="container">
+        <div class="row">
+            {% for object in object_list %}
+                <div class="col s6">
 
-{% for object in object_list %}
+                    <h5>{{ object.title }}</h5>
+                    <p>{{ object.content }}</p>
+                    <a class="btn" href="{% url 'blogs:update' object.pk %}">Update</a>
 
-     <h4>{{ object.title }}</h4>
-    <p>{{ object.content }}</p>
-    <a href="{% url 'blogs:update' object.pk %}">Update</a>
-    <hr>
+                </div>
 
+            {% endfor %}
+        </div>
+    </div>
 
-{% endfor %}
-
-<a href="{% url 'blogs:create' %}">Click to Create new blog</a>
+    <a  class="btn blue" href="{% url 'blogs:create' %}">Click to Create new blog</a>
 
 {% endblock %}
